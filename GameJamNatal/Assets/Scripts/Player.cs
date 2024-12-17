@@ -22,11 +22,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
@@ -34,6 +29,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            AudioManager.instance.PlaySFX("jump");
         }
         else if (Input.GetButtonUp("Jump"))
             jump = false;
