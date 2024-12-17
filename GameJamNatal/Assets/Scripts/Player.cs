@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
 
     const float groundCheckRadius = 0.2f;
-    [SerializeField] public float speed = 2f; 
+    [SerializeField] public float speed = 2f;
+    [SerializeField] float jumpPower = 100f;
     float horizontalValue;
 
-    [SerializeField] bool isGrounded = false;
+    [SerializeField] bool isGrounded;
+    bool jump;
 
 
     private void Awake()
@@ -28,12 +30,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+        else if (Input.GetButtonUp("Jump"))
+            jump = false;
     }
 
     private void FixedUpdate()
     {
         GroundCheck();
-        Move(horizontalValue);
+        Move(horizontalValue, jump);
     }
 
     public void GroundCheck()
@@ -47,8 +56,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Move(float direction)
+    public void Move(float direction, bool jumpFlag)
     {
+        if (isGrounded && jumpFlag)
+        {
+            isGrounded = false;
+            jumpFlag = false;
+            rb.AddForce(new Vector2(0f, jumpPower));
+        }
+
         float xVal = direction * speed * 100 * Time.fixedDeltaTime;
         Vector2 targetVelocity = new Vector2(xVal, rb.velocity.y);
         rb.velocity = targetVelocity;
