@@ -26,7 +26,9 @@ public class Player : MonoBehaviour
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        //Adicionei o && isGrounded for true pra que ele pule só quando o player estiver no chão
+        //Dessa forma, o áudio não toca se ele estiver no ar e também não pula, mesmo que não tenha nenhum efeito visual diferente
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jump = true;
             AudioManager.instance.PlaySFX("jump");
