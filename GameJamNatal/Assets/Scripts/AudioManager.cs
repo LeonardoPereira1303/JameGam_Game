@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    public AudioClip sfxWalk, sfxJump, sfxAttack;
+    public AudioClip sfxJump, sfxSteps, sfxConfirm, sfxCancel, sfxShoot;
     public AudioClip mscMenu, mscGame;
 
     //Sound Object
@@ -20,15 +20,21 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(string sfxName)
     {
         switch (sfxName)
-        {
-            case "walk":
-                SoundObjectCreation(sfxWalk);
-                break;
+        {            
             case "jump":
                 SoundObjectCreation(sfxJump);
                 break;
-            case "attack":
-                SoundObjectCreation(sfxAttack);
+            case "steps":
+                SoundObjectCreation(sfxSteps);
+                break;
+            case "confirm":
+                SoundObjectCreation(sfxConfirm);
+                break;
+            case "cancel":
+                SoundObjectCreation(sfxCancel);
+                break;
+            case "shoot":
+                SoundObjectCreation(sfxShoot);
                 break;
             default:
                 break;
@@ -63,4 +69,6 @@ public class AudioManager : MonoBehaviour
         newObject.GetComponent<AudioSource>().loop = true;
         newObject.GetComponent<AudioSource>().Play();
     }
+
+
 }
