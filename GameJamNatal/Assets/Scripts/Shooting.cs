@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Shoot();
+            AudioManager.instance.PlaySFX("shoot");
         }
     }
 
