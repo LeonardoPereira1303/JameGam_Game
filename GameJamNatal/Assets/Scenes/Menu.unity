@@ -337,9 +337,12 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_AnchoredPosition: {x: 9, y: 0.0000019073486}
@@ -685,6 +688,9 @@ RectTransform:
   - {fileID: 162146731}
   - {fileID: 2006701737}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -865,9 +871,12 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_AnchoredPosition: {x: -2.9, y: -0.48999977}
@@ -1687,9 +1696,12 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_AnchoredPosition: {x: 7.3, y: 0}
@@ -2036,6 +2048,9 @@ CanvasRenderer:
   m_GameObject: {fileID: 785407807}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3528,6 +3543,9 @@ SceneRoots:
   - {fileID: 783561776}
   - {fileID: 7780071445848838657}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
