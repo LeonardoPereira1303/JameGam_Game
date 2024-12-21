@@ -52,14 +52,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (startedJumping)
         {
-            anim.SetTrigger("PlayerJumping");
-            justLanded = false;
+            anim.SetTrigger("IsGrounded");
+            startedJumping = false;
             return;
         }
 
         if (justLanded)
         {
-            anim.SetTrigger("PlayerIdle");
+            anim.SetTrigger("IsStopped");
             justLanded = false;
             return;
         }
