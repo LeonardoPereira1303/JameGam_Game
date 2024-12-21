@@ -9,7 +9,9 @@ public class PlayerMomentum : MonoBehaviour
 
     #region Componentes
     public Rigidbody2D rb { get; private set; }
-    public PlayerAnimator AnimHandler { get; private set; }
+    //public PlayerAnimator AnimHandler { get; private set; }
+
+    public Animator anim;
     #endregion
 
     public bool IsFacingRight { get; private set; }
@@ -23,6 +25,7 @@ public class PlayerMomentum : MonoBehaviour
     //Jump
     private bool isJumpCut;
     private bool isJumpFalling;
+    public bool isGrounded = false;
 
     private Vector2 moveInput;
 
@@ -38,7 +41,7 @@ public class PlayerMomentum : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        AnimHandler = GetComponent<PlayerAnimator>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -61,6 +64,9 @@ public class PlayerMomentum : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             OnJumpInput();
+
+            isGrounded = false;
+            anim.SetBool("isJumping", !isGrounded);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,7 +78,7 @@ public class PlayerMomentum : MonoBehaviour
         {
             if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
             {
-                //if (LastOnGroundTime < 0.1f)
+                //if (LastOnGroundTime < -0.1f)
                 //{
                 //    AnimHandler.justLanded = true;
                 //}
@@ -153,6 +159,8 @@ public class PlayerMomentum : MonoBehaviour
 
         if (IsSliding)
             Slide();
+
+        anim.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
     }
 
     public void OnJumpUpInput()
@@ -280,5 +288,10 @@ public class PlayerMomentum : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(groundCheckPoint.position, groundCheckSize);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        isGrounded = true;
     }
 }
