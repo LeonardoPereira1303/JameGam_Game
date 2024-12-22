@@ -5,20 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    void Start()
-    {
-        
-    }
+    public ScoreManager scoreManager;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void HandleTrigger(Collider2D other)
     {
+        Debug.Log($"Trigger manual chamado por {other.gameObject.name}");
         if (other.CompareTag("Player"))
-        {            
+        {
             SceneManager.LoadScene("Fase2");
             AudioManager.instance.PlaySFX("nextlevel");
         }
-            
-        
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"{other.gameObject.name} entrou no trigger!");
+    }
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {            
+    //        SceneManager.LoadScene("Fase2");
+    //        AudioManager.instance.PlaySFX("nextlevel");
+    //    }
+
+
+    //}
 }
