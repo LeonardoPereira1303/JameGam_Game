@@ -49,6 +49,8 @@ MonoBehaviour:
   sfxShoot: {fileID: 8300000, guid: 5a49feab92655094c96d391e26bda6e0, type: 3}
   sfxConfirm: {fileID: 8300000, guid: 7ea7723a871d8a540af096ec078f840f, type: 3}
   sfxCancel: {fileID: 8300000, guid: 48c7debcdd033254d8f037ffe1569adb, type: 3}
-  mscMenu: {fileID: 0}
+  sfxCollect: {fileID: 8300000, guid: 0c35953464eda514facc3bd546a537cd, type: 3}
+  sfxNetxLevel: {fileID: 8300000, guid: 7887baf647d6cd34cad95af95f77ba20, type: 3}
+  mscMenu: {fileID: 8300000, guid: cc1562fc44d562a458eec339a21e50b9, type: 3}
   mscGame: {fileID: 0}
   soundObject: {fileID: 7498624175674127947, guid: 124aab2cca861c04c91059ce945d311f, type: 3}

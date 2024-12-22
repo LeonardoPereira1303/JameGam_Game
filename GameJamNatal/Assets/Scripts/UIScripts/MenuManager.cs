@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void Game()
     {
-        SceneManager.LoadScene("Fase");
+        SceneManager.LoadScene("Fase1");
     }
 
     public void Exit()

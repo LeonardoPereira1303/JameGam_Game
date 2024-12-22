@@ -6,16 +6,27 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI collectableScore;
-    int score;
+    public int score;
+    [SerializeField] public int maxScore;
 
     void Start()
     {
-        collectableScore.text = score + " /6";
+        //collectableScore.text = score + " /6";
+        collectableScore.text = score + $" /{maxScore}";
     }
 
     public void IncreaseScore()
     {
         score++;
-        collectableScore.text = score + " /6";
+        //collectableScore.text = score + " /6";
+        collectableScore.text = score + $" /{maxScore}";
+    }
+
+    public void VerifyScore()
+    {
+        if(score == maxScore)
+        {
+            
+        }
     }
 }

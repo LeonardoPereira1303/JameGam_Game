@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     void Start()
     {
         
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {            
             SceneManager.LoadScene("Fase2");
+            AudioManager.instance.PlaySFX("nextlevel");
+        }
+            
+        
     }
 }
