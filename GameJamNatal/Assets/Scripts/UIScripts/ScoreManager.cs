@@ -10,12 +10,12 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        collectableScore.text = score + " /3";
+        collectableScore.text = score + " /6";
     }
 
     public void IncreaseScore()
     {
         score++;
-        collectableScore.text = score + " /3";
+        collectableScore.text = score + " /6";
     }
 }
