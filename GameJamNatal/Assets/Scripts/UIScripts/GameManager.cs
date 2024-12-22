@@ -7,19 +7,27 @@ public class GameManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
 
-    public void HandleTrigger(Collider2D other)
-    {
-        Debug.Log($"Trigger manual chamado por {other.gameObject.name}");
-        if (other.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("Fase2");
-            AudioManager.instance.PlaySFX("nextlevel");
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"{other.gameObject.name} entrou no trigger!");
+
+        // Verifica se o objeto que entrou no trigger é o Player
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player detectado no colisor.");
+
+            // Verifica se o score atual é igual ao máximo
+            if (scoreManager != null && scoreManager.score == scoreManager.maxScore)
+            {
+                Debug.Log("MaxScore alcançado. Carregando cena...");
+                SceneManager.LoadScene("Fase2");
+                AudioManager.instance.PlaySFX("nextlevel");
+            }
+            else
+            {
+                Debug.Log("Score insuficiente para avançar.");
+            }
+        }
     }
 
     //private void OnTriggerEnter2D(Collider2D other)

@@ -21184,6 +21184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Iglu_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6205429243476101665, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1294732057}
     - target: {fileID: 8055659371134277135, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
       propertyPath: m_FlipX
       value: 1
