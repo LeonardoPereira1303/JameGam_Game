@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour
 
         if(health <= 0)
         {
-            Debug.Log("You died");
+            FindObjectOfType<MenuManager>().Defeat();
         }
     }
 

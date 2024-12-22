@@ -21,6 +21,8 @@ public class PlayerMomentum : MonoBehaviour
     public float LastOnWallTime { get; private set; }
     public float LastOnWallRightTime { get; private set; }
     public float LastOnWallLeftTime { get; private set; }
+    public bool isDead = false;
+
 
     //Jump
     private bool isJumpCut;
