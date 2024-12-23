@@ -5016,7 +5016,7 @@ GameObject:
   - component: {fileID: 1363170554}
   m_Layer: 6
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5684,7 +5684,7 @@ GameObject:
   - component: {fileID: 1559199531}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20495,7 +20495,7 @@ GameObject:
   - component: {fileID: 1794487395}
   m_Layer: 6
   m_Name: Plataforms
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22926,7 +22926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2596113740041728824, guid: 61d043c644c548e4091ae73a9c454bab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 2596113740041728824, guid: 61d043c644c548e4091ae73a9c454bab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22960,6 +22960,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3189620236093764493, guid: 61d043c644c548e4091ae73a9c454bab, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d084e36288abec46a70fcd2791e79e0, type: 2}
     - target: {fileID: 4389565798351854196, guid: 61d043c644c548e4091ae73a9c454bab, type: 3}
       propertyPath: anim
       value: 
