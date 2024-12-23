@@ -11,7 +11,7 @@ public class PlayerMomentum : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     //public PlayerAnimator AnimHandler { get; private set; }
 
-    public Animator anim;
+    private Animator anim;
     #endregion
 
     public bool IsFacingRight { get; private set; }
@@ -23,13 +23,18 @@ public class PlayerMomentum : MonoBehaviour
     public float LastOnWallLeftTime { get; private set; }
     public bool isDead = false;
 
+    public Color originalColor = Color.white;
+    public Color damageColor = Color.red;
 
     //Jump
     private bool isJumpCut;
     private bool isJumpFalling;
-    public bool isGrounded = false;
+    public bool isGrounded;
 
     private Vector2 moveInput;
+    private SpriteRenderer rend;
+
+    public string enemyTag = "Enemy";
 
     public float LastPressedJumpTime { get; private set; }
 
@@ -44,12 +49,16 @@ public class PlayerMomentum : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         SetGravityScale(Data.gravityScale);
         IsFacingRight = true;
+
+        if(rend != null)
+            rend.color = originalColor;
     }
 
     private void Update()
@@ -61,30 +70,29 @@ public class PlayerMomentum : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
 
         if (moveInput.x != 0)
-            CheckDirectionToFace(moveInput.x > 0);
-
-        if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnJumpInput();
-
-            isGrounded = false;
-            anim.SetBool("isJumping", !isGrounded);
+            CheckDirectionToFace(moveInput.x > 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        anim.SetBool("run", moveInput.x != 0);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            OnJumpInput();
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             OnJumpUpInput();
         }
+
+        isGrounded = Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer);
+        anim.SetBool("grounded", isGrounded);
 
         if (!IsJumping)
         {
             if (Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
             {
-                //if (LastOnGroundTime < -0.1f)
-                //{
-                //    AnimHandler.justLanded = true;
-                //}
-
                 LastOnGroundTime = Data.coyoteTime;
             }
         }
@@ -111,9 +119,7 @@ public class PlayerMomentum : MonoBehaviour
             isJumpCut = false;
             isJumpFalling = false;
             Jump();
-            //AudioManager.instance.PlaySFX("jump");
-
-            //AnimHandler.startedJumping = true;
+            AudioManager.instance.PlaySFX("jump");
         }
         #endregion
 
@@ -161,8 +167,6 @@ public class PlayerMomentum : MonoBehaviour
 
         if (IsSliding)
             Slide();
-
-        anim.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
     }
 
     public void OnJumpUpInput()
@@ -253,6 +257,8 @@ public class PlayerMomentum : MonoBehaviour
             force -= rb.velocity.y;
 
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+
+        isGrounded = false;
     }
 
     private void Slide()
@@ -292,8 +298,18 @@ public class PlayerMomentum : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPoint.position, groundCheckSize);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = true;
+        if(collision.gameObject.tag == "Ground")
+            isGrounded = true;
+
+        if(rend != null && collision.gameObject.CompareTag(enemyTag))
+            rend.color = damageColor;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (rend != null && collision.gameObject.CompareTag(enemyTag))
+            rend.color = originalColor;
     }
 }

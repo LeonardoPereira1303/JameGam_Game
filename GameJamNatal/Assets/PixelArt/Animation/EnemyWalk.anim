@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyWalking
+  m_Name: EnemyWalk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -36,6 +36,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: 2bbd928805c4e2144bb633f9db0bc2af, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: 4d085809af1330f4591f2300ebb0e0f8, type: 3}
+    - time: 1.1666666
+      value: {fileID: 21300000, guid: 554a3a5b6a286a148815649b2de75ded, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -66,12 +68,13 @@ AnimationClip:
     - {fileID: 21300000, guid: 9f05b9ad434a80f48820d8f57e05d627, type: 3}
     - {fileID: 21300000, guid: 2bbd928805c4e2144bb633f9db0bc2af, type: 3}
     - {fileID: 21300000, guid: 4d085809af1330f4591f2300ebb0e0f8, type: 3}
+    - {fileID: 21300000, guid: 554a3a5b6a286a148815649b2de75ded, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 1.1833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
