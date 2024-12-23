@@ -17,7 +17,7 @@ public class Collectable : MonoBehaviour
         {
             scoreManager.IncreaseScore();
             gameObject.SetActive(false);
-            AudioManager.instance.PlaySFX("collect");            
+            //AudioManager.instance.PlaySFX("collect");            
         }
     }
 }

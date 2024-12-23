@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("MaxScore alcançado. Carregando cena...");
                 SceneManager.LoadScene(sceneName);
-                AudioManager.instance.PlaySFX("nextlevel");
+                //AudioManager.instance.PlaySFX("nextlevel");
             }
             else
             {

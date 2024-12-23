@@ -111,7 +111,7 @@ public class PlayerMomentum : MonoBehaviour
             isJumpCut = false;
             isJumpFalling = false;
             Jump();
-            AudioManager.instance.PlaySFX("jump");
+            //AudioManager.instance.PlaySFX("jump");
 
             //AnimHandler.startedJumping = true;
         }
