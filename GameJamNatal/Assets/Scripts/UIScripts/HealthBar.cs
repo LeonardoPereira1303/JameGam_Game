@@ -22,9 +22,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (collision.CompareTag("Player"))
             LoseHealth(25);
     }
 }
