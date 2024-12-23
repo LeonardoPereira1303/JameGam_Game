@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
-    [SerializeField] public string sceneName;
+    public string sceneName;
 
     void OnTriggerEnter2D(Collider2D other)
     {
