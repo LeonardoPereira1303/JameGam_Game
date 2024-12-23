@@ -23,6 +23,8 @@ public class PlayerMomentum : MonoBehaviour
     public float LastOnWallLeftTime { get; private set; }
     public bool isDead = false;
 
+    public Color originalColor = Color.white;
+    public Color damageColor = Color.red;
 
     //Jump
     private bool isJumpCut;
@@ -30,6 +32,9 @@ public class PlayerMomentum : MonoBehaviour
     public bool isGrounded;
 
     private Vector2 moveInput;
+    private SpriteRenderer rend;
+
+    public string enemyTag = "Enemy";
 
     public float LastPressedJumpTime { get; private set; }
 
@@ -44,12 +49,16 @@ public class PlayerMomentum : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         SetGravityScale(Data.gravityScale);
         IsFacingRight = true;
+
+        if(rend != null)
+            rend.color = originalColor;
     }
 
     private void Update()
@@ -293,5 +302,14 @@ public class PlayerMomentum : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
             isGrounded = true;
+
+        if(rend != null && collision.gameObject.CompareTag(enemyTag))
+            rend.color = damageColor;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (rend != null && collision.gameObject.CompareTag(enemyTag))
+            rend.color = originalColor;
     }
 }
