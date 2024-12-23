@@ -481,7 +481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The children didn't get \nany presents this Christmas\n"
+  m_text: The children got their gifts!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 332c07861a288bf449c60fbae64811ac, type: 2}
   m_sharedMaterial: {fileID: -7010155070438586502, guid: 332c07861a288bf449c60fbae64811ac, type: 2}
@@ -894,7 +894,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 162}
-  m_SizeDelta: {x: 391.238, y: 142.61}
+  m_SizeDelta: {x: 475.88, y: 142.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1145341484
 MonoBehaviour:
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: Congratulations
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 332c07861a288bf449c60fbae64811ac, type: 2}
   m_sharedMaterial: {fileID: -7010155070438586502, guid: 332c07861a288bf449c60fbae64811ac, type: 2}
@@ -925,8 +925,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278255388
+  m_fontColor: {r: 0.11012411, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -943,8 +943,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.9
-  m_fontSizeBase: 58.9
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1272,9 +1272,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b2da2a5a91f86584298a9ffc19084077, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 49c9a56037a892c408f0110540810970, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

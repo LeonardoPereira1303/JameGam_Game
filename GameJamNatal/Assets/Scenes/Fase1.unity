@@ -4705,7 +4705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54051db48ba3f24baf75b36fb5f2499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerHandler: {fileID: 7080655821469767402}
   collectableScore: {fileID: 504414673}
   score: 0
   maxScore: 6
@@ -22630,6 +22629,10 @@ PrefabInstance:
       value: Iglu_0
       objectReference: {fileID: 0}
     - target: {fileID: 6205429243476101665, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
+      propertyPath: sceneName
+      value: Fase2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205429243476101665, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1294732057}
@@ -22680,17 +22683,6 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3501380382173208294, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
   m_PrefabInstance: {fileID: 7080655821469767397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7080655821469767402 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6205429243476101665, guid: a0567bd4236999f408c7e18747abb16a, type: 3}
-  m_PrefabInstance: {fileID: 7080655821469767397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656577188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d983a202fda1d024386c74970334cbc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7177983443495870674
 PrefabInstance:
   m_ObjectHideFlags: 0

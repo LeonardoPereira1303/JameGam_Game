@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    public AudioClip sfxWalk, sfxJump, sfxShoot, sfxConfirm, sfxCancel, sfxCollect, sfxNetxLevel;
+    public AudioClip sfxTakeDamage, sfxJump, sfxShoot, sfxConfirm, sfxCancel, sfxCollect, sfxNetxLevel;
     public AudioClip mscMenu, mscGame;
 
     //Sound Object
@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         switch (sfxName)
         {
             case "walk":
-                SoundObjectCreation(sfxWalk);
+                SoundObjectCreation(sfxTakeDamage);
                 break;
             case "jump":
                 SoundObjectCreation(sfxJump);

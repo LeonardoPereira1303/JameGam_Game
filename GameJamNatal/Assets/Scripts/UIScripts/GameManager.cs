@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    [SerializeField] public string sceneName;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
             if (scoreManager != null && scoreManager.score == scoreManager.maxScore)
             {
                 Debug.Log("MaxScore alcançado. Carregando cena...");
-                SceneManager.LoadScene("Fase2");
+                SceneManager.LoadScene(sceneName);
                 AudioManager.instance.PlaySFX("nextlevel");
             }
             else
