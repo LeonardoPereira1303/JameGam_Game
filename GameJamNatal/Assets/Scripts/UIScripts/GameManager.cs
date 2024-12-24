@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    public AudioManager audioManager;
     public string sceneName;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"{other.gameObject.name} entrou no trigger!");
@@ -22,7 +28,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("MaxScore alcançado. Carregando cena...");
                 SceneManager.LoadScene(sceneName);
-                //AudioManager.instance.PlaySFX("nextlevel");
+                audioManager.PlaySFX(audioManager.sfxNetxLevel);
             }
             else
             {

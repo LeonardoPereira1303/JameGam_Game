@@ -222,10 +222,10 @@ MonoBehaviour:
       - m_Target: {fileID: 8082860138367369947, guid: 4d06224515ae087458fbd78d6a742b2f, type: 3}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySFX
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 7ea7723a871d8a540af096ec078f840f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: confirm
@@ -657,10 +657,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1268464354}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlaySFX
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 7ea7723a871d8a540af096ec078f840f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: confirm
@@ -1419,6 +1419,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1038651458577545353, guid: 4d06224515ae087458fbd78d6a742b2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073151857303505284, guid: 4d06224515ae087458fbd78d6a742b2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835451084993357850, guid: 4d06224515ae087458fbd78d6a742b2f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7428357716877035305, guid: 4d06224515ae087458fbd78d6a742b2f, type: 3}

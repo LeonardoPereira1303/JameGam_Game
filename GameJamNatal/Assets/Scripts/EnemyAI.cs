@@ -5,12 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider2D))]
 public class EnemyAI : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public List<Transform> points;
 
     public int nextID = 0;
-
     int idChangeValue = 1;
-
     public float speed = 2;
 
     private void Reset()
@@ -40,6 +40,11 @@ public class EnemyAI : MonoBehaviour
         points = new List<Transform>();
         points.Add(p1.transform);
         points.Add(p2.transform);
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -76,6 +81,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log($"{name} triggered");
             FindObjectOfType<HealthBar>().LoseHealth(25);
+            audioManager.PlaySFX(audioManager.sfxTakeDamage);
         }
     }
 }

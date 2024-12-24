@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMomentum : MonoBehaviour
 {
     public PlayerData Data;
+    AudioManager audioManager;
 
     #region Componentes
     public Rigidbody2D rb { get; private set; }
@@ -50,6 +51,8 @@ public class PlayerMomentum : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -119,7 +122,7 @@ public class PlayerMomentum : MonoBehaviour
             isJumpCut = false;
             isJumpFalling = false;
             Jump();
-            AudioManager.instance.PlaySFX("jump");
+            audioManager.PlaySFX(audioManager.sfxJump);
         }
         #endregion
 

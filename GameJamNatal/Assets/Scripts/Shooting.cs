@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    AudioManager audioManager;
     public GameObject shootingItem;
     public Transform shootingPoint;
     public bool canShoot = true;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Shoot();
-            //AudioManager.instance.PlaySFX("shoot");
+            audioManager.PlaySFX(audioManager.sfxShoot);
         }
     }
 

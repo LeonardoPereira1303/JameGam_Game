@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jump = true;
-            //AudioManager.instance.PlaySFX("jump");
+            //
+            //.instance.PlaySFX("jump");
         }
         else if (Input.GetButtonUp("Jump"))
             jump = false;

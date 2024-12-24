@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Image fillBar;
     public float health;
-
+    
     public void LoseHealth(int value)
     {
         if (health <= 0)

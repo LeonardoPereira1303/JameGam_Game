@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    AudioManager audioManager;
     ScoreManager scoreManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
     private void Start()
     {
         scoreManager = GameObject.Find("UI").GetComponent<ScoreManager>();
@@ -17,7 +23,7 @@ public class Collectable : MonoBehaviour
         {
             scoreManager.IncreaseScore();
             gameObject.SetActive(false);
-            //AudioManager.instance.PlaySFX("collect");            
+            audioManager.PlaySFX(audioManager.sfxCollect);          
         }
     }
 }
